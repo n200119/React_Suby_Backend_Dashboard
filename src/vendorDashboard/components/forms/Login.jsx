@@ -31,11 +31,20 @@ const Login = ({ showWelcomeHandler }) => {
       const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`);
       const vendorData = await vendorResponse.json();
       console.log(vendorResponse);
+      console.log(vendorData);
 
       if(vendorResponse.ok)
       {
         const vendorFirmId = vendorData.vendorFirmId;
-        const vendorFirmName = vendorData.vendor.firm[0].firmName;
+        const vendorFirmName=null;
+        if(vendorFirmId===undefined)
+        {
+          vendorFirmName = undefined;
+        }
+        else
+        {
+        vendorFirmName = vendorData.vendor.firm[0].firmName;
+        }
         console.log("first firm is:",vendorFirmId);
         localStorage.setItem("firmId",vendorFirmId);
         localStorage.setItem("firmName",vendorFirmName);
