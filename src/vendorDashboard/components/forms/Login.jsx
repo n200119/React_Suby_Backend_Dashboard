@@ -27,8 +27,10 @@ const Login = ({ showWelcomeHandler }) => {
         showWelcomeHandler();
       }
       const vendorId = data.vendorId;
+      console.log(vendorId);
       const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`);
       const vendorData = await vendorResponse.json();
+      console.log(vendorResponse);
 
       if(vendorResponse.ok)
       {

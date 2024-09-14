@@ -61,7 +61,7 @@ const LandingPage = () => {
 
   const showAddFirmHandler = () => {
     if (showLogOut) {
-      setshowLogin(false);
+      setShowLogin(false);
       setShowRegister(false);
       setShowAddFirm(true);
       setShowAddProduct(false);
