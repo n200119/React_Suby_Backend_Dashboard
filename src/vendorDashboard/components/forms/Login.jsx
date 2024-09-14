@@ -36,7 +36,7 @@ const Login = ({ showWelcomeHandler }) => {
       if(vendorResponse.ok)
       {
         const vendorFirmId = vendorData.vendorFirmId;
-        const vendorFirmName=null;
+        let vendorFirmName;
         if(vendorFirmId===undefined)
         {
           vendorFirmName = undefined;
