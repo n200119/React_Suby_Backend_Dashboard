@@ -27,7 +27,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     const firmName = localStorage.getItem("firmName");
-    if (firmName) {
+    if (firmName !== "false") {
       setShowFirmTitle(false);
     }
   }, []);

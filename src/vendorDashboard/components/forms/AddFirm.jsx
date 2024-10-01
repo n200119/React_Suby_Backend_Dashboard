@@ -75,6 +75,9 @@ const AddFirm = () => {
         setRegion([]);
         setOffer("");
         setFile(null);
+      localStorage.setItem("firmId",data.firmId)
+      localStorage.setItem("firmName",data.firmName);
+      window.location.reload();
       }
       else if(data.message==="only single firm should be added")
       {
@@ -83,7 +86,6 @@ const AddFirm = () => {
       else{
         alert("failed to add firm");
       }
-      localStorage.setItem("firmId",data.firmId)
     } catch (error) {
       console.log(error);
       alert("adding of firm failed");
